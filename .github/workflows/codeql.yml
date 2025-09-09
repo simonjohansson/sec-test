@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      - run: ls -R
+      - run: pwd
       - name: Upload SARIF 
         uses: github/codeql-action/upload-sarif@v3
         with:
