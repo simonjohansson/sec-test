@@ -19,5 +19,5 @@ jobs:
         with:
           sarif_file: proj1/trivy-results.sarif
           category: trivy-docker  
-          checkout_path: proj1/Dockerfile
+          checkout_path: proj1
 
