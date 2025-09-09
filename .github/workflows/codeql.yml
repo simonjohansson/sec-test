@@ -1,0 +1,22 @@
+name: "Upload sarif"
+
+on:
+  push:
+  
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write   # required for SARIF upload
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload SARIF 
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: proj1/trivy-results.sarif
+          category: trivy-docker  
+          checkout_path: proj1/Dockerfile
+
